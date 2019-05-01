@@ -227,17 +227,18 @@ namespace IBM.Watsson.Examples
                     foreach (var alt in res.alternatives)
                     {
                         string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
-                        //Debug.Log( alt.transcript);
+                    
                         //HERE
                         string h = "hello";
-                       // alt.transcript.Replace(" ", String.Empty);
                         Debug.Log(alt.transcript);
-                        //if (string.Compare (alt.transcript, h)==0) {
-                        if (alt.transcript.Contains("hello")) { 
-                        Debug.Log("ya kalb");
+                        if (alt.transcript.Contains("ب س م ا ل ل ه")) { 
+                       
                          GetComponent<Animator>().Play("Hello");
                         }
-
+                           if (alt.transcript.Contains("ا س م ك ا ي ه")) { 
+                     
+                         GetComponent<Animator>().Play("alef");
+                        }
                         // ResultsField.text = text;
 
                     }
