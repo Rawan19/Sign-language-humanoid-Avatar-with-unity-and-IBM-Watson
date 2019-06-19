@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Copyright 2015 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -109,7 +109,7 @@ namespace IBM.Watsson.Examples
             {
                 if (value && !_service.IsListening)
                 {
-                    _service.RecognizeModel = (string.IsNullOrEmpty(_recognizeModel) ? "en-US_BroadbandModel" : _recognizeModel);
+                    _service.RecognizeModel = (string.IsNullOrEmpty(_recognizeModel) ? "ar-AR_BroadbandModel" : _recognizeModel);
                     _service.DetectSilence = true;
                     _service.EnableWordConfidence = true;
                     _service.EnableTimestamps = true;
@@ -227,17 +227,47 @@ namespace IBM.Watsson.Examples
                     foreach (var alt in res.alternatives)
                     {
                         string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
-                    
+                        //Debug.Log( alt.transcript);
                         //HERE
                         string h = "hello";
+                       // alt.transcript.Replace(" ", String.Empty);
                         Debug.Log(alt.transcript);
-                        if (alt.transcript.Contains("ب س م ا ل ل ه")) { 
-                       
-                         GetComponent<Animator>().Play("Hello");
+                    
+                        //if (string.Compare (alt.transcript, h)==0) {
+                        if (alt.transcript.Contains("اجتماع")) { 
+                        Debug.Log(alt.transcript);
+                         GetComponent<Animator>().Play("اجتماع");
                         }
-                           if (alt.transcript.Contains("ا س م ك ا ي ه")) { 
-                     
-                         GetComponent<Animator>().Play("alef");
+
+                        if (alt.transcript.Contains("أرض"))
+                        {
+                            Debug.Log(alt.transcript);
+                            GetComponent<Animator>().Play("أرض");
+                        }
+
+                        if (alt.transcript.Contains("مهم"))
+                        {
+                            Debug.Log(alt.transcript);
+                            GetComponent<Animator>().Play("مهم");
+                        }
+
+                        if (alt.transcript.Contains("مرحبا"))
+                        {
+                            Debug.Log(alt.transcript);
+                            GetComponent<Animator>().Play("مرحبا");
+                        }
+
+                        if (alt.transcript.Contains("خلاف"))
+                        {
+                            Debug.Log(alt.transcript);
+                            GetComponent<Animator>().Play("خلاف");
+                        }
+
+
+                        if (alt.transcript.Contains("اخبار"))
+                        {
+                            Debug.Log(alt.transcript);
+                            GetComponent<Animator>().Play("اخبار");
                         }
                         // ResultsField.text = text;
 
